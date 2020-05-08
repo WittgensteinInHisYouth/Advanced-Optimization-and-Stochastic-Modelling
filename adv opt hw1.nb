@@ -1,0 +1,111 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3541,        101]
+NotebookOptionsPosition[      3116,         85]
+NotebookOutlinePosition[      3461,        100]
+CellTagsIndexPosition[      3418,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"jobset", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Job1\>\"", ",", " ", "\"\<Job2\>\"", ",", " ", "\"\<Job3\>\"", ",", 
+     " ", "\"\<Job4\>\""}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"processtime", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\"\<Job1\>\"", "\[Rule]", " ", "5"}], ",", " ", 
+      RowBox[{"\"\<Job2\>\"", "\[Rule]", " ", "4"}], ",", " ", 
+      RowBox[{"\"\<Job3\>\"", "\[Rule]", " ", "3"}], ",", " ", 
+      RowBox[{"\"\<Job4\>\"", "\[Rule]", " ", "6"}]}], " ", "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"duedate", " ", "=", " ", 
+   RowBox[{"Association", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\"\<Job1\>\"", "\[Rule]", " ", "3"}], ",", " ", 
+      RowBox[{"\"\<Job2\>\"", "\[Rule]", " ", "5"}], ",", " ", 
+      RowBox[{"\"\<Job3\>\"", "\[Rule]", " ", "11"}], ",", " ", 
+      RowBox[{"\"\<Job4\>\"", "\[Rule]", " ", "12"}]}], " ", "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lateness", "[", "schedule_", "]"}], ":=", 
+   RowBox[{"Max", "[", 
+    RowBox[{
+     RowBox[{"Accumulate", "[", 
+      RowBox[{"processtime", "/@", " ", "schedule"}], "]"}], "-", 
+     RowBox[{"duedate", "/@", " ", "schedule"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MinimalBy", "[", 
+  RowBox[{
+   RowBox[{"Permutations", "[", "jobset", "]"}], ",", "lateness"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7902603884315825`*^9, 3.7902603899010935`*^9}, {
+  3.790260462066654*^9, 3.790260603196747*^9}, {3.790260655783601*^9, 
+  3.7902607519097424`*^9}, {3.790260809957334*^9, 3.790260847535222*^9}, {
+  3.7902609916981378`*^9, 3.790261221390859*^9}, {3.7902612706000957`*^9, 
+  3.7902612772387486`*^9}, {3.79026135176096*^9, 3.7902614186731853`*^9}, {
+  3.790261477284054*^9, 3.790261506653788*^9}},
+ CellLabel->"In[86]:=",ExpressionUUID->"80817a20-7a95-4f82-b242-57749336ff5e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Job1\"\>", ",", "\<\"Job2\"\>", ",", "\<\"Job3\"\>", 
+     ",", "\<\"Job4\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Job2\"\>", ",", "\<\"Job1\"\>", ",", "\<\"Job3\"\>", 
+     ",", "\<\"Job4\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7902613524939313`*^9, {3.7902614001354203`*^9, 3.790261410407843*^9}, 
+   3.790261507210903*^9},
+ CellLabel->"Out[90]=",ExpressionUUID->"2cc6132c-4228-4b18-863c-2c68be84dd69"]
+}, Open  ]]
+},
+WindowSize->{759, 697},
+WindowMargins->{{199, Automatic}, {-100, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2006, 46, 124, "Input",ExpressionUUID->"80817a20-7a95-4f82-b242-57749336ff5e"],
+Cell[2589, 70, 511, 12, 32, "Output",ExpressionUUID->"2cc6132c-4228-4b18-863c-2c68be84dd69"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
